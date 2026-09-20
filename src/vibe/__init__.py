@@ -1,2 +1,11 @@
+import uvicorn
+from .app import app
+
+
 def main() -> None:
-    print("Hello from vibe!")
+    uvicorn.run(
+        app,
+        host="0.0.0.0",
+        port=8000,
+        log_level="info",
+    )
