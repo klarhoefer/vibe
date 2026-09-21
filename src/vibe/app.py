@@ -1,23 +1,12 @@
 from fastapi import FastAPI, HTTPException
-from pydantic import BaseModel
-from typing import Optional
+
+from .models import Item, Message
 
 app = FastAPI(
     title="Vibe API",
     description="Eine einfache WebAPI mit FastAPI und Swagger",
     version="0.1.0",
 )
-
-
-class Item(BaseModel):
-    id: int
-    name: str
-    description: Optional[str] = None
-    price: float
-
-
-class Message(BaseModel):
-    message: str
 
 
 # In-Memory Datenbank für Demo-Zwecke
